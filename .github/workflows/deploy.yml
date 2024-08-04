@@ -34,7 +34,7 @@ jobs:
       - run: yarn build
       - run: |
           mkdir -p dist/.well-known
-          echo "${{ secrets.APPLE_DEVELOPER_MERCHANTID }}" > dist/.well-known/apple-developer-merchantid-domain-association
+          echo -n "${{ secrets.APPLE_DEVELOPER_MERCHANTID }}" > dist/.well-known/apple-developer-merchantid-domain-association
       - uses: actions/upload-pages-artifact@v1
         with:
           path: dist
